@@ -52,3 +52,60 @@ on console.log
 <p>Answer or Error:  this work: person.name = "user"; </p>
 <p>Why : const does not make the object immutable and It only makes the reference constant  const protects the reference, not the object itself</p>
 </div>
+
+=======================================================================================================
+
+<div>
+  <h3>Example 1 :</h3>
+  <p>true + false</p>
+  <p><strong>Output:</strong> 1</p>
+  <p><strong>Why:</strong> true is converted to 1 and false to 0. So, 1 + 0 = 1.</p>
+</div>
+
+<div>
+  <h3>Example 2 :</h3>
+  <p>null + 1</p>
+  <p><strong>Output:</strong> 1</p>
+  <p><strong>Why:</strong> null is treated as 0 in numeric operations. So, 0 + 1 = 1.</p>
+</div>
+
+<div>
+  <h3>Example 3 :</h3>
+  <p>"12" + 12</p>
+  <p><strong>Output:</strong> "1212"</p>
+  <p><strong>Why:</strong> The + operator performs string concatenation when one operand is a string.</p>
+</div>
+
+<div>
+  <h3>Example 4 :</h3>
+  <p>!!undefined</p>
+  <p><strong>Output:</strong> false</p>
+  <p><strong>Why:</strong> undefined is falsy. !undefined is true, and !!undefined converts it back to false.</p>
+</div>
+
+<div>
+  <h3>Example 5 :</h3>
+  <p>"12" - 1</p>
+  <p><strong>Output:</strong> 11</p>
+  <p><strong>Why:</strong> The - operator forces numeric conversion. "12" becomes 12, then 12 - 1 = 11.</p>
+</div>
+
+<div>
+  <h3>Why typeof NaN is "number"</h3>
+  <p>typeof NaN</p>
+  <p><strong>Output:</strong> "number"</p>
+  <p><strong>Why:</strong> NaN represents a failed numeric operation, but it still belongs to the number type.</p>
+</div>
+
+<div>
+  <h3>Undefined vs Null</h3>
+  <p>let x;</p>
+  <p>console.log(x);</p>
+  <p><strong>Output:</strong> undefined</p>
+
+  <p>let y = null;</p>
+  <p>console.log(y);</p>
+  <p><strong>Output:</strong> null</p>
+
+  <p><strong>Why:</strong> undefined means a variable is declared but not assigned. null is an intentional empty value.</p>
+</div>
