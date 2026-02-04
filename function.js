@@ -84,3 +84,113 @@ console.log(result);
 // function can be treated as variables
 // function can be passed as arguments to other functions
 // function can be returned from other functions
+
+
+// let fnc = function(){}
+// fnc(function(){}
+function abc1(v1, v2){
+console.log(v2);
+return v1();
+}
+abc1(function(){
+console.log("first class function")
+}, "Hello")
+
+function abc2(v1, v2){
+
+console.log(v2);
+return v1(v2);
+
+}
+abc2(function(value){
+console.log("first class function", value)
+}, "Hello")
+
+// function can be returned from other function
+function abc(){
+return function (){
+console.log("function within function")
+}
+}
+abc()();
+function abc3(){
+return () => {
+console.log("arrow function within function")
+}
+}
+abc3()();
+
+// higher order function (HOF)
+// function that takes another function as an argument or returns a function as a result (eva function je return kare ek function athava acpect kare ek function params ma)
+// function abcd (val) {val();}
+//--> abcd(function(){console.log("hello")})
+// function abcd(val){} --> higher order function
+// function abcd() { return function(){} } abcd()() --> higher order function
+
+// pure vs impure function
+// pure function --> function je same input par same output aapse ane 
+// koi bahar na state ne modify na kare (pure function --> je function bahar na state ne modify na kare)
+let a = 20
+function change_a(){
+return "a not change (pure function) " + a;
+} //pure function
+console.log(change_a());
+
+
+// impure function --> function je same input par different output aapse athava bahar na state ne modify kare (impure function --> je function bahar na state ne modify kare )
+function change_a1(){
+a=a+2;
+return "a change (impure function) " + a;
+}
+console.log(change_a1());
+
+// closure function
+// function je potana parent function na variables ne access kari shake (return thava valo function use karshe parent function na koi variable) (function within function)
+function outer(){
+let outer_var = "Outer Function Variable";
+function inner() {
+console.log(outer_var);
+}
+inner();
+}
+outer();
+
+function outer1() {
+let outer_var = "new Outer Function Variable";
+function inner1() {
+console.log(outer_var);
+let inner_var = "new Inner Function Variable";
+function most_inner() {
+let most_inner_var = "new Most Inner Function Variable";
+function deepest_inner() {
+console.log(outer_var);
+console.log(inner_var);
+console.log(most_inner_var);
+}
+deepest_inner();
+}
+most_inner();
+}
+inner1();
+}
+outer1();
+
+// IIFE Immediately Invoked Function Expression
+(
+function () {})(); // function je declare karta j call thai jaye
+(function () {
+console.log("IIFE executed");
+})();
+// Hoisting in function
+// use case --> show project structure
+temp_fnc();
+function temp_fnc(){
+console.log("hoisting in function")
+}
+
+fnc2()();
+function fnc2() {
+return () => {
+console.log("new arrow function within function")
+}
+}
