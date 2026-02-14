@@ -1,0 +1,75 @@
+// 1. Get even numbers
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log("1 Output:", evenNumbers);
+// Output: [2, 4, 6]
+// Why: filter() keeps only numbers divisible by 2 (even numbers).
+
+
+
+// 2. Filter adults
+const ages = [2, 1, 10, 16, 5];
+function isAdult(age) {
+  return age >= 18;
+}
+const adults = ages.filter(isAdult);
+console.log("2 Output:", adults);
+// Output: []
+// Why: None of the ages are 18 or above, so no elements pass the condition.
+
+
+
+// 3. Remove empty items
+const inputs = ['Hello', '', 'World', '', 'JS'];
+const validInputs = inputs.filter(text => text !== '');
+console.log("3 Output:", validInputs);
+// Output: ['Hello', 'World', 'JS']
+// Why: filter() removes empty strings and keeps only non-empty values.
+
+
+
+// 4. Filter passing marks
+const marks = [35, 72, 88, 40, 25];
+const passedStudents = marks.filter(mark => mark >= 40);
+console.log("4 Output:", passedStudents);
+// Output: [72, 88, 40]
+// Why: Only marks 40 or above are retained.
+
+
+
+// 5. Get affordable prices
+const prices = [199, 499, 999, 1499, 299];
+const affordable = prices.filter(price => price <= 500);
+console.log("5 Output:", affordable);
+// Output: [199, 499, 299]
+// Why: filter() keeps prices less than or equal to 500.
+
+
+
+// 6. Filter long words
+const words = ['hi', 'hello', 'javascript', 'ok'];
+function isLongWord(word) {
+  return word.length > 3;
+}
+const longWords = words.filter(isLongWord);
+console.log("6 Output:", longWords);
+// Output: ['hello', 'javascript']
+// Why: Words with length greater than 3 are selected.
+
+
+
+// 7. Filter positive numbers
+const transactions = [200, -100, 500, -50, 300];
+const credits = transactions.filter(amount => amount > 0);
+console.log("7 Output:", credits);
+// Output: [200, 500, 300]
+// Why: Only positive values (credits) are kept.
+
+
+
+// 8. Filter numbers within range
+const scores = [45, 60, 85, 30, 90];
+const selectedScores = scores.filter(score => score >= 50 && score <= 90);
+console.log("8 Output:", selectedScores);
+// Output: [60, 85, 90]
+// Why: Only scores between 50 and 90 (inclusive) satisfy the condition.
