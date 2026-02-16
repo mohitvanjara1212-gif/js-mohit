@@ -1,0 +1,48 @@
+// Event page par koi pan action karo tene ek event rise karshe, page par click, hover, typing all are events
+// Event Listener event nu reaction give reaction when click, dbclick, hover, typing
+// Add Event Listener
+// select -> event function what you change
+// element.addEventListener("event_name", function(){})
+// Common Events: click, input, change, submit, mouseover, keyup
+// Click
+let btn = document.querySelector(".btn1");
+btn.addEventListener("click", ()=>{
+if (btn.textContent === "Dark Mode") {
+btn.textContent = "Light Mode"
+document.body.style.backgroundColor = "black";
+} else
+{
+document.body.style.backgroundColor = "white";
+btn.textContent = "Dark Mode";
+}
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const button = document.getElementById("colorBtn");
+    const box = document.getElementById("box");
+    let isRed = false;
+
+    button.addEventListener("click", function () {
+        if (isRed) {
+            box.style.backgroundColor = "";
+            button.textContent = "red"
+            isRed = false;
+        } else {
+            box.style.backgroundColor = "red";
+            button.textContent = "white"
+            isRed = true;
+        }
+    });
+
+});
+
+// input
+// how to know which is typed ?
+let inp = document.querySelector("input");
+inp.addEventListener("input", (dets) => {
+// console.log(dets);
+if (dets.data != null) {
+console.log(dets.data);
+}
+});

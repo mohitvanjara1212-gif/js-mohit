@@ -37,7 +37,7 @@ email: "test@gmail.com",
 user1.address.locations.lat; // Deep Access
 // user1.address.location.Ing;
 // Object destructuring:
-let { lat, lng } = userl.address.locations;
+let { lat, lng } = user1.address.locations;
 let { name, email, address } = user1;
 let { city} = user1.address;
 let { lat: abc_lat} = user1.address.locations;

@@ -1,0 +1,128 @@
+1. What is the DOM? How does it represent HTML?
+
+The DOM (Document Object Model) is a programming interface that represents an HTML document as a tree structure of objects (nodes).
+Each HTML element becomes a node, allowing JavaScript to read, modify, add, or delete elements dynamically.
+
+2. Types of nodes in DOM
+
+Common node types:
+
+Element node
+
+Text node
+
+Attribute node
+
+Comment node
+
+Document node
+
+3. Element node vs Text node
+
+Element node: Represents HTML tags (<div>, <p>)
+
+Text node: Represents the text inside elements
+
+Example:
+
+<p>Hello</p>
+
+<p> → element node
+
+Hello → text node
+
+4. Nodes in:
+<div>Hello<span>World</span></div>
+
+Nodes:
+
+<div> → element node
+
+Hello → text node
+
+<span> → element node
+
+World → text node
+
+5. getElementById vs querySelector
+
+getElementById("id") → selects element by ID only
+
+querySelector() → selects using CSS selectors (id, class, tag)
+
+6. getElementsByClassName return?
+
+Returns a live HTMLCollection, not an array.
+
+7. Select all buttons with class "buy-now"
+document.querySelectorAll(".buy-now");
+8. T1: Change heading text
+document.getElementById("heading").textContent = "Welcome to JS DOM";
+9. T2: Print all <li> text
+let list = document.querySelectorAll("li");
+list.forEach(val => console.log(val.textContent));
+10. innerText vs textContent vs innerHTML
+
+innerText → visible text only
+
+textContent → all text (hidden included)
+
+innerHTML → returns HTML inside element
+
+11. When use textContent instead of innerHTML?
+
+Use when inserting plain text to avoid HTML injection (safer and faster).
+
+12. T3: Replace paragraph content
+document.querySelector("p").innerHTML = "<b>Updated</b>";
+13. Get image src
+document.querySelector("img").src;
+14. setAttribute()
+
+Adds or updates an attribute.
+
+element.setAttribute("class","box");
+15. Add title attribute dynamically
+document.querySelector("div").setAttribute("title","Hello");
+16. Remove disabled attribute
+button.removeAttribute("disabled");
+17. createElement()
+
+Creates a new element and returns it.
+
+let el = document.createElement("li");
+18. appendChild vs prepend
+
+appendChild() → adds at end
+
+prepend() → adds at beginning
+
+19. Remove element using removeChild?
+
+Yes.
+
+parent.removeChild(child);
+20. Create <li> New Task
+let li = document.createElement("li");
+li.textContent = "New Task";
+document.querySelector("ul").appendChild(li);
+21. Create image at top of div
+let img = document.createElement("img");
+img.src = "https://via.placeholder.com/150";
+document.querySelector("div").prepend(img);
+22. Delete first item of list
+document.querySelector("ul li").remove();
+23. Change background color
+element.style.backgroundColor = "yellow";
+24. classList.add vs classList.toggle
+
+add() → always adds class
+
+toggle() → adds if missing, removes if present
+
+25. Add highlight class to even items
+document.querySelectorAll("ul li:nth-child(2n)")
+.forEach(elem => elem.classList.add("highlight"));
+26. Set font size of all <p>
+document.querySelectorAll("p")
+.forEach(p => p.style.fontSize = "18px");
